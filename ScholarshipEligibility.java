@@ -46,9 +46,17 @@ public class ScholarshipEligibility {
 
     public static void main(String[] args) {
         // Test the function
-        String test_result_consideration = evaluateEligibility(22, false, false, false, false, 3000);
-        String test_result_false = evaluateEligibility(25, true, true, true, false, 6000);
-        String test_result_true = evaluateEligibility(19, true, true, false, false, 2500);
+        String test_result_consideration = 
+            evaluateEligibility(22, false, 
+                false, false, false, 3000);
+
+        String test_result_false = 
+            evaluateEligibility(25, true, 
+                true, true, false, 6000);
+
+        String test_result_true = 
+            evaluateEligibility(19, true, 
+                true, false, false, 2500);
 
         // Print the result
         System.out.println(test_result_consideration);
