@@ -13,9 +13,9 @@ public class ScholarshipEligibility {
      * @param parentsCATax Parents paid CA tax for 1+ years
      * @param volunteeredCA Student volunteered in CA with proof
      * @param householdIncome Annual household income
-     * @return 1 (eligible), 0 (not eligible), or "Dean for consideration"
+     * @returN ENUM: ELIGIBLE, NOT_ELIGIBLE, DEFER_TO_DEAN
      */
-    public static Object checkScholarshipEligibility(
+    public static String evaluateEligibility(
             int age,
             boolean caResidency2Years,
             boolean caWork6Months,
@@ -25,7 +25,7 @@ public class ScholarshipEligibility {
         
         // Criterion 1: Age must be between 18 and 24 (inclusive)
         if (age < 18 || age > 24) {
-            return 0;
+            return "NOT ELIGIBLE";
         }
         
         // Criterion 2: Check CA Residency (at least one must be true)
@@ -33,22 +33,26 @@ public class ScholarshipEligibility {
                                parentsCATax || volunteeredCA;
         
         if (residencyMet) {
-            return 1;
+            return "ELIGIBLE";
         }
         
         // Criterion 3: Dean's Consideration
         if (householdIncome < 5000) {
-            return "Dean for consideration";
+            return "DEAN FOR CONSIDERATION";
         }
         
-        return 0;
+        return "NOT ELIGIBLE";
     }
 
     public static void main(String[] args) {
         // Test the function
-        System.out.println("Scholarship Eligibility Test:");
-        System.out.println(checkScholarshipEligibility(20, true, false, false, false, 6000));
-        System.out.println(checkScholarshipEligibility(25, true, false, false, false, 6000));
-        System.out.println(checkScholarshipEligibility(20, false, false, false, false, 3000));
+        String test_result_consideration = evaluateEligibility(22, false, false, false, false, 3000);
+        String test_result_false = evaluateEligibility(25, true, true, true, false, 6000);
+        String test_result_true = evaluateEligibility(19, true, true, false, false, 2500);
+
+        // Print the result
+        System.out.println(test_result_consideration);
+        System.out.println(test_result_false);
+        System.out.println(test_result_true);
     }
 }
