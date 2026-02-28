@@ -45,6 +45,7 @@ public class ScholarshipEligibility {
     }
 
     public static void main(String[] args) {
+        //CRUCIAL TEST CASES
         /**
          * Test Case 1: "Dean consideration"
          * Age (22) check FALSE
@@ -87,6 +88,7 @@ public class ScholarshipEligibility {
         String test_result_false2 = ScholarshipEligibility.evaluateEligibility(20, false, 
                 false, false, false, 6000);
         
+        // OPTIONAL TEST CASE TO COVER MORE SCENARIOS
         /**
          * Test Case 5: Age Fail 1 below bound
          * Age (17) check False
