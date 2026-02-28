@@ -193,10 +193,13 @@ public class ScholarshipEligibility {
                         false, false, false, -1);
 
         // Print the result
+        System.out.println("SCHOLARSHIP ELIGIBILITY TEST RESULTS:");
         System.out.println("Test 1  (Dean consideration):       " + test_result_consideration);
         System.out.println("Test 2  (Age fail 25):              " + test_result_false);
         System.out.println("Test 3  (Residency met):            " + test_result_true);
         System.out.println("Test 4  (Not eligible income high): " + test_result_false2);
+        
+        System.out.println("\nADDITIONAL TEST RESULTS:");
         System.out.println("Test 5  (Age fail 17):              " + test_result_age_fail_17);
         System.out.println("Test 6  (Age 18 residency met):     " + test_result_age_boundary_18_residency);
         System.out.println("Test 7  (Age 24 dean):              " + test_result_age_boundary_24_dean);
