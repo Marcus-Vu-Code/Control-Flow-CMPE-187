@@ -1,4 +1,3 @@
-package Data_Flow;
 import java.util.Arrays;
 
 public class MergeSortedArrays {
@@ -48,13 +47,21 @@ public class MergeSortedArrays {
 
     public static void main(String[] args) {
         //sorted arrays for test
-        int[] A = {5, 23, 67, 112, 143, 555, 1000, 123982137};
-        int[] B = {-1999, -321, -100, -55, -3, 0};
+        int[] A = {1,2,7,11};
+        int[] B = {3,7,13,16,29};
 
         //merge the arrays to C[]
         int[] C = merge(A, B);
         
         // Print result
-        printArrayString(C);
+        System.out.println("Input Arrays:");
+        System.out.print("A = ");
+        printArrayString(A);
+        System.out.print("B = ");
+        printArrayString(B);
+
+        System.out.println("Output Array:");
+        System.out.print("C = ");
+        printArrayString(C);   
     }
 }
